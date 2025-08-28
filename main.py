@@ -1,6 +1,6 @@
 """
 Bookbot - A command-line text analysis tool.
-Usage CLI: python3 main.py <path_to_book
+Usage CLI: python3 main.py <path_to_book>
 """
 import sys
 from stats import (
@@ -10,8 +10,9 @@ from stats import (
     sort_dictionary,
     print_report
 )
-#Main Function - handles CLI args and runs analysis
+
 def main():
+    """Main Function - handles CLI args and runs analysis"""
     try:
         if len(sys.argv) < 2:
             print("Usage: python3 main.py <path_to_book>")
@@ -23,7 +24,7 @@ def main():
             chars_and_count = get_char_count(text)
             print_report(filepath, num_words, chars_and_count)
     except Exception as e:
-      print(f"Error encountered: {e}")
+        print(f"Error encountered: {e}")
      
 if __name__ == "__main__":
     main()
